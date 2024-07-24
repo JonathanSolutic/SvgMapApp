@@ -18,10 +18,12 @@
             overflow: hidden;
             position: relative;
         }
+
         #svgMap {
             max-width: 100%;
             max-height: 100%;
         }
+
         .zoom-btn {
             position: absolute;
             top: 10px;
@@ -31,11 +33,22 @@
             cursor: pointer;
             z-index: 1000;
         }
+
         #zoomIn {
             left: 10px;
         }
+
         #zoomOut {
             left: 60px;
+        }
+
+        .tooltip {
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 5px;
+            display: none;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -45,12 +58,14 @@
 
         <button id="zoomIn" class="zoom-btn">Zoom In</button>
         <button id="zoomOut" class="zoom-btn">Zoom Out</button>
+        <div id="tooltip" class="tooltip"></div>
     </div>
 
     <script>
         const svgElement = document.getElementById("svgMap");
         const zoomInBtn = document.getElementById("zoomIn");
         const zoomOutBtn = document.getElementById("zoomOut");
+        const tooltip = document.getElementById("tooltip");
 
         let viewBox = svgElement.viewBox.baseVal;
         let zoomFactor = 1.1;
@@ -68,7 +83,24 @@
             viewBox.width *= zoomFactor;
             viewBox.height *= zoomFactor;
         });
+
+        svgElement.addEventListener("mousemove", (event) => {
+            if (event.target.tagName === 'circle') {
+                const titleElement = event.target.querySelector('title');
+                if (titleElement) {
+                    tooltip.innerText = titleElement.textContent;
+                    tooltip.style.display = 'block';
+                    tooltip.style.left = event.clientX + 'px';
+                    tooltip.style.top = event.clientY + 'px';
+                }
+            } else {
+                tooltip.style.display = 'none';
+            }
+        });
+
+        svgElement.addEventListener("mouseleave", () => {
+            tooltip.style.display = 'none';
+        });
     </script>
 </body>
 </html>
-

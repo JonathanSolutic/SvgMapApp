@@ -15,6 +15,7 @@ namespace SvgMapApp.Services
             sb.AppendLine("<rect width=\"800\" height=\"600\" fill=\"#f0f0f0\" />");
 
             var points = new List<string>();
+            int id = 0;
 
             foreach (var coordinate in coordinates)
             {
@@ -23,7 +24,9 @@ namespace SvgMapApp.Services
 
                 points.Add($"{x.ToString(CultureInfo.InvariantCulture)},{y.ToString(CultureInfo.InvariantCulture)}");
 
-                sb.AppendLine($"<circle cx=\"{x.ToString(CultureInfo.InvariantCulture)}\" cy=\"{y.ToString(CultureInfo.InvariantCulture)}\" r=\"5\" fill=\"red\" />");
+                sb.AppendLine($"<circle cx=\"{x.ToString(CultureInfo.InvariantCulture)}\" cy=\"{y.ToString(CultureInfo.InvariantCulture)}\" r=\"5\" fill=\"red\">");
+                sb.AppendLine($"<title>Coordinate {++id}: ({coordinate.Latitude}, {coordinate.Longitude})</title>");
+                sb.AppendLine($"</circle>");
             }
 
             sb.AppendLine($"<polyline points=\"{string.Join(" ", points)}\" stroke=\"blue\" stroke-width=\"2\" fill=\"none\" />");

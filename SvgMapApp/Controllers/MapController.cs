@@ -23,14 +23,15 @@ namespace SvgMapApp.Controllers
 
                 //les coordontes du Data center Mutanda
                 //new GpsCoordinate { Latitude = -10.79452, Longitude = 25.79313 },
-                //new GpsCoordinate { Latitude = -10.79441, Longitude = 25.79314 }, 
+                //new GpsCoordinate { Latitude = -10.79441, Longitude = 25.79314 },
                 //new GpsCoordinate { Latitude = -10.79443, Longitude = 25.79304 },
-                //new GpsCoordinate { Latitude = -10.79455, Longitude = 25.79308}, 
+                //new GpsCoordinate { Latitude = -10.79455, Longitude = 25.79308},
             };
 
             var svgContent = _generator.GenerateSvg(coordinates);
 
-            return Content(svgContent,"image/svg+xml");
+            ViewData["SvgContent"] = svgContent;
+            return View();
         }
     }
 }
