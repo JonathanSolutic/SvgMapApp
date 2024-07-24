@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\WORK\\Desktop\\Gps Coordonata\\SvgMapApp\\SvgMapApp\\SvgMapApp.csproj",
+      "projectUniqueName": "C:\\Users\\WORK\\Desktop\\Gps Coordonata\\SvgMapAppV2\\SvgMapApp\\SvgMapApp.csproj",
       "projectName": "SvgMapApp",
-      "projectPath": "C:\\Users\\WORK\\Desktop\\Gps Coordonata\\SvgMapApp\\SvgMapApp\\SvgMapApp.csproj",
+      "projectPath": "C:\\Users\\WORK\\Desktop\\Gps Coordonata\\SvgMapAppV2\\SvgMapApp\\SvgMapApp.csproj",
       "packagesPath": "C:\\Users\\WORK\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\WORK\\Desktop\\Gps Coordonata\\SvgMapApp\\SvgMapApp\\obj\\",
+      "outputPath": "C:\\Users\\WORK\\Desktop\\Gps Coordonata\\SvgMapAppV2\\SvgMapApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\WORK\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -11,7 +11,7 @@ namespace SvgMapApp.Services
         {
             var sb = new StringBuilder();
 
-            sb.AppendLine("<svg id=\"svgMap\" width=\"800\" height=\"600\" viewBox=\"0 0 800 600\" xmlns=\"http://www.w3.org/2000/svg\" style=\"border:1px solid #ccc;\">");
+            sb.AppendLine("<svg id=\"svgMap\" width=\"800\" height=\"600\" viewBox=\"0 0 800 600\" xmlns=\"http://www.w3.org/2000/svg\">");
             sb.AppendLine("<rect width=\"800\" height=\"600\" fill=\"#f0f0f0\" />");
 
             var points = new List<string>();
